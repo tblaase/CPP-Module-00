@@ -6,7 +6,7 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:11:28 by tblaase           #+#    #+#              #
-#    Updated: 2022/02/23 14:01:17 by tblaase          ###   ########.fr        #
+#    Updated: 2022/02/23 14:11:09 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,13 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	= main.cpp
+SRC_FILES	=	main.cpp
 
-OBJ_FILES = $(SRC_FILES:.cpp=.o)
+OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
 #paths
-SRC_DIR		=	$(addprefix $(SRC_DIR), $(SRC_FILES))
-OBJ_DIR		=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 #all rule
 all: $(NAME)
