@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:46:13 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/08 17:44:11 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/08 20:15:00 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@
 int main(void)
 {
 	PhoneBook PhoneBook;
-	Contact Contact;
 	return (0);
 }
