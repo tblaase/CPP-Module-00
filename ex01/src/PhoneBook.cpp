@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:46:13 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/08 17:44:11 by tblaase          ###   ########.fr       */
+/*   Created: 2022/03/08 17:08:31 by tblaase           #+#    #+#             */
+/*   Updated: 2022/03/08 17:42:36 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include <iostream>
 
-
-int main(void)
+PhoneBook::PhoneBook(void)
 {
-	PhoneBook PhoneBook;
-	Contact Contact;
-	return (0);
+	std::cout << "Constructor called for PhoneBook" << std::endl;
+	return;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "Destructor called for PhoneBook" << std::endl;
+	return;
 }
