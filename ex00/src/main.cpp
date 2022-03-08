@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:46:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/08 16:33:33 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/08 17:00:02 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ int main(int argc, char **argv)
 			if (argv[i] != NULL)
 				std::cout << " ";
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	return (0);
 }
