@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:46:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/08 15:43:56 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/08 16:33:33 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int main(int argc, char **argv)
 		{
 			for (int j = 0; argv[i][j] != '\0'; j++)
 				argv[i][j] = (char)toupper(argv[i][j]);
-			std::cout << argv[i] << " ";
+			std::cout << argv[i];
+			if (argv[i] != NULL)
+				std::cout << " ";
 		}
 		std::cout << "\n";
 	}
