@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:51:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/08 20:18:31 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/09 20:01:26 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@
 
 class PhoneBook{
 	private:
-		Contact contacts[8];
+		Contact	_contacts[8];
+		int		_index;
+
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void	add(void);
-		void	search();
-		void	exit();
+		void	set_information(void);
+		void	get_information(void)const;
+		void	show_instruction(void);
 };
-
 
 #endif
