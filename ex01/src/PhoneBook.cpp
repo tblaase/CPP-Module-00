@@ -23,20 +23,20 @@ PhoneBook::~PhoneBook(void)
 	return;
 }
 
-void	PhoneBook::set_information(void)
-{
-	if (this->_index < 7)
-	{
-		this->_contacts[this->_index].set_contact(this->_index);
-		this->_index++;
-	}
-	else
-	{
-		// delete oldest and push all contacts one number lower
-		// after that, don't increment _index
-		this->_index = 7; //only here to not create error msg
-	}
-}
+// void	PhoneBook::set_information(void)
+// {
+// 	if (this->_index < 7)
+// 	{
+// 		this->_contacts[this->_index].set_contact(this->_index);
+// 		this->_index++;
+// 	}
+// 	else
+// 	{
+// 		// delete oldest and push all contacts one number lower
+// 		// after that, don't increment _index
+// 		this->_index = 7; //only here to not create error msg
+// 	}
+// }
 
 void	PhoneBook::get_information() const
 {

@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:51:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/09 20:01:26 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/10 20:57:59 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook{
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void	set_information(void);
+		// void	set_information(void);
 		void	get_information(void)const;
 		void	show_instruction(void);
 };
