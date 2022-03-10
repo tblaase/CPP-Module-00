@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:46:13 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/09 20:10:59 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/10 16:49:42 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,30 @@ int main(void)
 	bool		run = true;
 	std::string	command;
 
-	while (run)
+	PhoneBook.show_instruction();
+	std::cout << "\033[33m$>\033[0m";
+	while (run && std::getline(std::cin, command))
 	{
-		PhoneBook.show_instruction();
-		std::cout << "\033[33m$>\033[0m";
-		std::getline(std::cin, command);
-		if (command == "ADD")
+		if (command.at(0) == (char)4)
+			command.clear();
+		if (command.compare("ADD") == 0)
 			PhoneBook.set_information();
-		else if (command == "SEARCH")
+		else if (command.compare("SEARCH") == 0)
 			PhoneBook.get_information();
-		else if (command  == "EXIT")
+		else if (command.compare("EXIT") == 0)
 		{
 			std::cout << "\033[34mHope i served you well. Good Bye.\033[0m" << std::endl;
 			run = false;
+			continue ;
 		}
+		command.clear();
+		PhoneBook.show_instruction();
+		std::cout << "\033[33m$>\033[0m";
+	}
+	if (run)
+	{
+		std::cout << "You pressed ^D, exiting now." << command << std::endl
+		<< "\033[34mHope i served you well. Good Bye.\033[0m" << std::endl;
 	}
 	return (0);
 }

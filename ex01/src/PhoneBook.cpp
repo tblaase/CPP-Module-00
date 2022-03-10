@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:08:31 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/09 20:16:13 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/10 10:57:07 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ void	PhoneBook::get_information() const
 		std::cout << "\033[31mPlease add at least one contact before searching.\033[0m" << std::endl;
 	else
 	{
-		std::cout << "|-------------------------------------------|" << std::endl;
-		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-		std::cout << "|----------|----------|----------|----------|" << std::endl;
 		// ask for input of index and check it for 0 <= index >= 7
 		// Display error when outside, then prompt again
 		// Display contact information, right aligned, truncated if more than 10 characters long to only have 9 characters followed by a '.'
@@ -57,15 +54,20 @@ void	PhoneBook::get_information() const
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "\033[31mInvalid index, only 0-7 is valid.\033[0m" << std::endl;
+			std::cout << "\033[31mInvalid index, only 0-7 is valid.\033[0m\n";
 			std::cout << "Please tell me which contact index i should show you." << std::endl << "Index: ";
 		}
-		this->_contacts[index].get_contact();
+		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (index > 0)
+			this->_contacts[index - 1].get_contact();
 		std::cout << "|-------------------------------------------|" << std::endl;
 	}
 }
 
 void	PhoneBook::show_instruction(void)//figure out why it is getting printed multiple times
 {
-	std::cout << "\033[KEnter your command [ADD, SEARCH, EXIT]:@@@@" << std::endl;
+	std::cout << "\033[KEnter your command [ADD, SEARCH, EXIT]:" << std::endl;
 }
