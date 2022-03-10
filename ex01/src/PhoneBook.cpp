@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:08:31 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/10 10:57:07 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/10 20:56:26 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,56 @@ void	PhoneBook::get_information() const
 		std::cout << "\033[31mPlease add at least one contact before searching.\033[0m" << std::endl;
 	else
 	{
-		// ask for input of index and check it for 0 <= index >= 7
-		// Display error when outside, then prompt again
-		// Display contact information, right aligned, truncated if more than 10 characters long to only have 9 characters followed by a '.'
-		std::cout << "Please tell me which contact index i should show you."<< std::endl << "Index: ";
-		while (!(std::cin >> index) || (index < 0 || index > 8))
+		std::string rest;
+		std::cout << "Please tell me which contact index i should show you. (0 to quit searching)\nIndex: ";
+		while (!(std::cin >> index) || index < 0 || index > this->_index)
 		{
+			if (std::cin.eof() == true)
+			{
+				std::cout << "You Pressed ^D. Exiting search mode now." << std::endl;
+				return ;
+			}
+			std::getline(std::cin, rest);
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "\033[31mInvalid index, only 0-7 is valid.\033[0m\n";
-			std::cout << "Please tell me which contact index i should show you." << std::endl << "Index: ";
+			// std::cout << "rest is: " << rest << std::endl;
+			if (rest.empty() == false)
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "\033[31mOnly digits please.\033[0m\n";
+				std::cout << "Please tell me which contact i should show you. (0 to quit searching)\nIndex: ";
+			}
+			else if (index > this->_index)
+			{
+				std::cout << "You only have " << this->_index << " Contacts saved." << std::endl;
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Please tell me which contact i should show you.\nIndex: ";
+			}
+			else
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "\033[31mInvalid index, only 0-7 is valid.\033[0m\n";
+				std::cout << "Please tell me which contact i should show you. (0 to quit searching)\nIndex: ";
+			}
 		}
-		std::cout << "|-------------------------------------------|" << std::endl;
-		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-		std::cout << "|----------|----------|----------|----------|" << std::endl;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (index > 0)
+		{
+			std::cout << "|-------------------------------------------|" << std::endl;
+			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+			std::cout << "|----------|----------|----------|----------|" << std::endl;
+			// Display contact information, right aligned, truncated if more than 10 characters long to only have 9 characters followed by a '.'
 			this->_contacts[index - 1].get_contact();
-		std::cout << "|-------------------------------------------|" << std::endl;
+			std::cout << "|-------------------------------------------|" << std::endl;
+		}
+		else
+			std::cout << "Exiting search mode now." << std::endl;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }
 
-void	PhoneBook::show_instruction(void)//figure out why it is getting printed multiple times
+void	PhoneBook::show_instruction(void)
 {
 	std::cout << "\033[KEnter your command [ADD, SEARCH, EXIT]:" << std::endl;
 }
