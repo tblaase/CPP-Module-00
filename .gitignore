@@ -65,6 +65,3 @@ dkms.conf
 
 # Visual Studio Code Debug Files
 .vscode
-
-#log file of ex02
-*.log
