@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:08:31 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/10 20:56:26 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/14 15:42:36 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ PhoneBook::~PhoneBook(void)
 	return;
 }
 
-// void	PhoneBook::set_information(void)
-// {
-// 	if (this->_index < 7)
-// 	{
-// 		this->_contacts[this->_index].set_contact(this->_index);
-// 		this->_index++;
-// 	}
-// 	else
-// 	{
-// 		// delete oldest and push all contacts one number lower
-// 		// after that, don't increment _index
-// 		this->_index = 7; //only here to not create error msg
-// 	}
-// }
+void	PhoneBook::set_information(void)
+{
+	if (this->_index < 7)
+	{
+		this->_contacts[this->_index].set_contact(this->_index);
+		this->_index++;
+	}
+	else
+	{
+		for (int i = 1; i < 8; i++)
+			this->_contacts[i - 1] = this->_contacts[i];
+		this->_contacts[this->_index].set_contact(this->_index);
+	}
+}
 
 void	PhoneBook::get_information() const
 {
@@ -46,52 +46,41 @@ void	PhoneBook::get_information() const
 		std::cout << "\033[31mPlease add at least one contact before searching.\033[0m" << std::endl;
 	else
 	{
-		std::string rest;
+		std::string input;
 		std::cout << "Please tell me which contact index i should show you. (0 to quit searching)\nIndex: ";
-		while (!(std::cin >> index) || index < 0 || index > this->_index)
+		while (!(std::getline(std::cin, input)) || input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0 || std::atoi(input.c_str()) > this->_index)
 		{
 			if (std::cin.eof() == true)
 			{
-				std::cout << "You Pressed ^D. Exiting search mode now." << std::endl;
-				return ;
+				std::cout << "You Pressed ^D. Exiting phonebook now." << std::endl;
+				exit(0);
 			}
-			std::getline(std::cin, rest);
-			std::cin.clear();
-			// std::cout << "rest is: " << rest << std::endl;
-			if (rest.empty() == false)
+			else if (input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0)
 			{
 				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "\033[31mOnly digits please.\033[0m\n";
+				std::cout << "\033[31mOnly digits in range of 1 to 8 are allowed.\033[0m\n";
 				std::cout << "Please tell me which contact i should show you. (0 to quit searching)\nIndex: ";
 			}
-			else if (index > this->_index)
+			else if (std::atoi(input.c_str()) > this->_index)
 			{
-				std::cout << "You only have " << this->_index << " Contacts saved." << std::endl;
+				std::cout << "\033[33mYou only have " << this->_index << " Contacts saved.\033[0m" << std::endl;
 				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Please tell me which contact i should show you.\nIndex: ";
-			}
-			else
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "\033[31mInvalid index, only 0-7 is valid.\033[0m\n";
 				std::cout << "Please tell me which contact i should show you. (0 to quit searching)\nIndex: ";
 			}
 		}
+		index = std::atoi(input.c_str());
+		// std::cout << "DEBUG this->_index: " << this->_index << std::endl;
+		// std::cout << "DEBUG index: " << index << std::endl;
 		if (index > 0)
 		{
 			std::cout << "|-------------------------------------------|" << std::endl;
 			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 			std::cout << "|----------|----------|----------|----------|" << std::endl;
-			// Display contact information, right aligned, truncated if more than 10 characters long to only have 9 characters followed by a '.'
 			this->_contacts[index - 1].get_contact();
 			std::cout << "|-------------------------------------------|" << std::endl;
 		}
 		else
 			std::cout << "Exiting search mode now." << std::endl;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }
 
