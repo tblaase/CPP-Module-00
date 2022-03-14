@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:38:11 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/09 19:42:52 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:26:44 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdlib>
 
 class Contact{
 	private:
-		int					_index;
 		static std::string	_fields_name[5];
 		std::string			_informations[11];
 
@@ -34,8 +34,8 @@ class Contact{
 		Contact(void);
 		~Contact(void);
 
-		bool	set_contact(int index); //maybe void
-		void	get_contact()const;
+		bool	set_contact();
+		void	get_contact(int index)const;
 };
 
 #endif

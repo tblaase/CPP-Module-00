@@ -6,16 +6,26 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:37:21 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/09 20:00:17 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:28:36 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
+
+std::string Contact::_fields_name[5] =
+{
+	"First Name",
+	"Last Name",
+	"Nickname",
+	"Phone Number",
+	"Darkest Secret"
+};
+
 
 Contact::Contact()
 {
-	// std::cout << "This is the Contact Constructor" << std::endl;
+	for (int i = FirstName; i <= DarkestSecret; i++)
+		this->_informations[i] = std::string();
 	return;
 }
 
@@ -25,15 +35,40 @@ Contact::~Contact()
 	return;
 }
 
-bool	Contact::set_contact(int index)//maybe void instead
+bool	Contact::set_contact()
 {
-	this->_index = index;
-	std::cout << "here should be the set_contact of " << index << std::endl;
+	for (int i = FirstName; i <= DarkestSecret; i++)
+	{
+		std::cout << "Please enter the " << Contact::_fields_name[i] << ":\n+";
+		while ( !(std::getline(std::cin, this->_informations[i])) || this->_informations[i].length() == 0)
+		{
+			if (std::cin.eof() == true)
+			{
+				std::cout << "You Pressed ^D. Exiting phonebook now." << std::endl;
+				std::exit(0);
+			}
+			else if (this->_informations[i].length() == 0)
+			{
+				this->_informations[i].clear();
+				std::cout << "\033[31mEmpty contact information not allowed.\033[0m" << std::endl;
+				std::cout << "Please enter the " << Contact::_fields_name[i] << ":\n+";
+			}
+		}
+	}
 	std::cout << "\033[32mContact added successfully.\033[0m" << std::endl;
 	return (true);
 }
 
-void	Contact::get_contact() const
+void	Contact::get_contact(int index) const
 {
-	std::cout << "here should be the contact infos from get_contact" << std::endl;
+	std::cout << "|" << std::setw(10) << index;
+	for (int i = FirstName; i <= NickName; i++)
+	{
+		std::cout << "|";
+		if (this->_informations[i].length() > 10)
+			std::cout << this->_informations[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << this->_informations[i];
+	}
+	std::cout << "|" << std::endl;
 }
