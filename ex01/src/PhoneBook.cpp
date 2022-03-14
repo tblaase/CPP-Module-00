@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:08:31 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/14 17:48:02 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:52:05 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ void	PhoneBook::get_information() const
 			}
 		}
 		index = std::atoi(input.c_str());
-		// std::cout << "DEBUG this->_index: " << this->_index << std::endl;
-		// std::cout << "DEBUG index: " << index << std::endl;
 		if (index > 0)
 		{
 			std::cout << "|-------------------------------------------|" << std::endl;

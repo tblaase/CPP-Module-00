@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:37:21 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/14 17:28:36 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:51:52 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ Contact::Contact()
 
 Contact::~Contact()
 {
-	// std::cout << "This is the Contact Destructor" << std::endl;
-	return;
 }
 
 bool	Contact::set_contact()
