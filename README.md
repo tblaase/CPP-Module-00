@@ -34,4 +34,11 @@ Then you can run it with `./phonebook`.<br>
 
 ## Exercise 02
 
-The scope of this exercise was to re-engineer the [Account.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/Account.cpp) file from the given [tests.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/tests.cpp), [Account.hpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/include/Account.hpp) and [19920104_091532.log](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/19920104_091532.log) files.<br>
+The scope of this exercise was to re-engineer the [Account.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/Account.cpp) file from the given [tests.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/tests.cpp), [Account.hpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/include/Account.hpp) and [19920104_091532.log](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/19920104_091532.log) files.
+
+
+If you compare my output ([my.log](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/my.log)) with the original .log file, the only difference is the timestamp, which is expected.<br>
+Another difference will occure only when running it on macOS, where the order of the decronstruction is reversed.<br>
+
+You can compile this project with `make`, `make all` or `make re`.<br>
+Then you can run it with `./leak_information`.<br>
