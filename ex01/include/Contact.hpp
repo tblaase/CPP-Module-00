@@ -6,12 +6,12 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:38:11 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/14 17:26:44 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/15 16:55:35 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_H
-#define CLASS_H
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 #include <iomanip>
