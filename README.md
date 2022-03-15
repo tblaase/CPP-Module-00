@@ -28,10 +28,8 @@ The phonebook also has instructions and descriptive error messages that tell you
 
 Usage:
 
-```
-make
-./phonebook
-```
+You can compile this project with `make`, `make all` or `make re`.<br>
+Then you can run it with `./phonebook`.<br>
 
 
 ## Exercise 02
