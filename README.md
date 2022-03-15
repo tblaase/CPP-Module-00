@@ -1,6 +1,9 @@
 # CPP-Module-00
 
 This is my solution for the first module of the C++ modules of 42school.<br>
+![result](https://github.com/tblaase/CPP-Module-00/blob/main/readme_additions/result.png)
+
+
 C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes" (source: Wikipedia).<br><br>
 This project was my first contact to write programms in C++.<br>
 All of those exercises are compilable with the `-std=c++98`-flag, since this was a requirement for this project.<br>
