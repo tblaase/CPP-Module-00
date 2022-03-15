@@ -34,4 +34,4 @@ Then you can run it with `./phonebook`.<br>
 
 ## Exercise 02
 
-The scope of this exercise was to re-engineer the [Account.cpp]() file from the given [tests.cpp]() and [19920104_091532.log]() files.<br>
+The scope of this exercise was to re-engineer the [Account.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/Account.cpp) file from the given [tests.cpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/src/tests.cpp), [Account.hpp](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/include/Account.hpp) and [19920104_091532.log](https://github.com/tblaase/CPP-Module-00/blob/main/ex02/19920104_091532.log) files.<br>
