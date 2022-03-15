@@ -6,7 +6,7 @@ This is my solution for the first module of the C++ modules of 42school.
 ![result](https://github.com/tblaase/CPP-Module-00/blob/main/readme_additions/result.png)
 
 
-C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes" (source: Wikipedia).<br><br>
+C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes" (source: [Wikipedia](https://en.wikipedia.org/wiki/C++)).<br><br>
 This project was my first contact to write programms in C++.<br>
 All of those exercises are compilable with the `-std=c++98`-flag, since this was a requirement for this project.<br>
 All exercises where compiled and tested on `macOS Catalina 10.15.7` and `Ubuntu 20.04.4 LTS`.<br>
