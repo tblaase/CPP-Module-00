@@ -1,6 +1,8 @@
 # CPP-Module-00
 
-This is my solution for the first module of the C++ modules of 42school.<br>
+This is my solution for the first module of the C++ modules of 42school.
+
+
 ![result](https://github.com/tblaase/CPP-Module-00/blob/main/readme_additions/result.png)
 
 
