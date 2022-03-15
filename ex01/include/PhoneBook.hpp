@@ -6,12 +6,12 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:51:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/03/14 17:31:00 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/03/15 17:39:09 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CRAPPY_PHONEBOOK_H
-#define CRAPPY_PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <string>
 #include <iomanip>
